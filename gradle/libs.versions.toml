@@ -12,6 +12,7 @@ viewModelLifeCycle = "2.8.7"
 dagger-hilt = "2.53.1"
 retrofit = "2.11.0"
 room = "2.6.1"
+hilt-navigation = "1.2.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -30,6 +31,7 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
 android-lifecycle-runtime-ktx = {module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref="viewModelLifeCycle"}
 viewmodel-lifecycle  = {module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "viewModelLifeCycle"}
+hilt-navigation = {module = "androidx.hilt:hilt-navigation-compose", version.ref = "hilt-navigation"}
 dagger-hilt-android = {module = "com.google.dagger:hilt-android", version.ref = "dagger-hilt"}
 dagger-hilt-compiler = {module = "com.google.dagger:hilt-android-compiler", version.ref = "dagger-hilt"}
 squareup2-retrofit = {module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit"}

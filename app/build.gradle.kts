@@ -8,7 +8,7 @@ plugins {
 
 android {
     namespace = "com.kironstylo.dictionaryapp"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.kironstylo.dictionaryapp"
@@ -67,6 +67,7 @@ dependencies {
 
     // Dagger-Hilt
     implementation(libs.dagger.hilt.android)
+    implementation(libs.hilt.navigation)
     kapt(libs.dagger.hilt.compiler)
 
     // Retrofit
