@@ -40,7 +40,6 @@ import kotlinx.coroutines.flow.collectLatest
 class MainActivity : ComponentActivity() {
 
 
-    @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -66,8 +65,9 @@ class MainActivity : ComponentActivity() {
                         SnackbarHost(snackbarHostState)
                     }
                 ) {
+                    innerPadding ->
                     Box(
-                        modifier = Modifier.background(MaterialTheme.colorScheme.background)
+                        modifier = Modifier.padding(innerPadding).background(MaterialTheme.colorScheme.background)
                     ) {
 
                         Column(
@@ -105,21 +105,5 @@ class MainActivity : ComponentActivity() {
 
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    DictionaryAppTheme {
-        Greeting("Android")
     }
 }

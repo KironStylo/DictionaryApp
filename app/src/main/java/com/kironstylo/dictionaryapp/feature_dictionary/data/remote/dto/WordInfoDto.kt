@@ -8,7 +8,7 @@ data class WordInfoDto(
     @SerializedName("license")
     val license: LicenseDto,
     @SerializedName("phonetic")
-    val phonetic: String = "",
+    val phonetic: String? = "",
     @SerializedName("phonetics")
     val phonetics: List<PhoneticsDto>?,
     @SerializedName("word")
@@ -22,7 +22,7 @@ data class WordInfoDto(
         return WordInfoEntity(
             meanings = meanings?.map{ meaning -> meaning.toMeaning()} ?: emptyList(),
             word = word,
-            phonetic = phonetic
+            phonetic = phonetic ?:""
         )
     }
 }
