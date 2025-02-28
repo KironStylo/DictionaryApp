@@ -1,6 +1,7 @@
 package com.kironstylo.dictionaryapp.feature_dictionary.data.remote.dto
 
 import com.google.gson.annotations.SerializedName
+import com.kironstylo.dictionaryapp.feature_dictionary.data.local.entity.WordInfoEntity
 import com.kironstylo.dictionaryapp.feature_dictionary.domain.model.WordInfo
 
 data class WordInfoDto(
@@ -17,9 +18,9 @@ data class WordInfoDto(
     @SerializedName("sourceUrls")
     val sourceUrls: List<String>?
 ){
-    fun toWordInfo(): WordInfo {
-        return WordInfo(
-            meanings = meanings?.map{ meaning -> meaning.toMeaning()},
+    fun toWordInfoEntity(): WordInfoEntity {
+        return WordInfoEntity(
+            meanings = meanings?.map{ meaning -> meaning.toMeaning()} ?: emptyList(),
             word = word,
             phonetic = phonetic
         )
