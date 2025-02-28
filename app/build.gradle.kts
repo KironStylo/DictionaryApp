@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.dagger.hilt)
-    id("kotlin-kapt")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -19,6 +19,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
@@ -42,9 +43,7 @@ android {
     }
 }
 
-kapt {
-    correctErrorTypes = true
-}
+
 
 dependencies {
 
@@ -68,7 +67,7 @@ dependencies {
     // Dagger-Hilt
     implementation(libs.dagger.hilt.android)
     implementation(libs.hilt.navigation)
-    kapt(libs.dagger.hilt.compiler)
+    ksp(libs.dagger.hilt.compiler)
 
     // Retrofit
     implementation(libs.squareup2.retrofit)
@@ -76,7 +75,7 @@ dependencies {
 
     // Room
     implementation(libs.room.runtime)
-    kapt(libs.room.compiler)
+    ksp(libs.room.compiler)
 
     // Kotlin Coroutines for Room
     implementation(libs.room.ktx)
